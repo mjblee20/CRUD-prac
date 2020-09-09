@@ -18,6 +18,10 @@ mongoose
   .then(() => console.log('Database Connected Successfully'))
   .catch((err) => console.log(err));
 
+app.get('/', (req, res) => {
+  res.send('hi');
+});
+
 app.listen(5000, () => {
   console.log('Server is up and running on port 5000');
 });

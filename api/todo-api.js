@@ -10,11 +10,10 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/').post((req, res) => {
-  const { task, priority } = req.body;
+  const task = req.body.task;
 
   const todoItem = new Todo({
     task: task,
-    priority: priority,
   });
 
   todoItem

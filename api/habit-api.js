@@ -11,7 +11,8 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/').post((req, res) => {
-  var { newHabit, oldHabit } = req.body;
+  var newHabit = req.body.newHabit;
+  var oldHabit = req.body.oldHabit;
 
   const habitItem = new Habit({
     oldHabit: oldHabit,

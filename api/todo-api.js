@@ -9,7 +9,7 @@ router.route('/').get((req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.route('/').post((req, res) => {
+router.route('/add').post((req, res) => {
   var task = req.body.task;
 
   const todoItem = new Todo({

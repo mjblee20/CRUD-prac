@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const Habit = require('../model/habit');
+const HabitList = require('../model/habit');
 
 router.route('/').get((req, res) => {
   // res.send('get');
-  Habit.find()
+  HabitList.find()
     .then((list) => res.json(list))
     .catch((err) => console.log(err));
 });
@@ -14,7 +14,7 @@ router.route('/').post((req, res) => {
   var newHabit = req.body.newHabit;
   var oldHabit = req.body.oldHabit;
 
-  const habitItem = new Habit({
+  const habitItem = new HabitList({
     oldHabit: oldHabit,
     newHabit: newHabit,
   });

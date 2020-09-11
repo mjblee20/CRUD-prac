@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const HabitList = require('../model/habit');
+const HabitList = require('../model/habitList');
 
 router.route('/').get((req, res) => {
-  // res.send('get');
   HabitList.find()
     .then((list) => res.json(list))
     .catch((err) => console.log(err));

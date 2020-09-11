@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const habitSchema = Schema({
+const habitListSchema = Schema({
   oldHabit: {
     type: String,
     required: true,
@@ -12,4 +12,4 @@ const habitSchema = Schema({
   },
 });
 
-module.exports = mongoose.model('HabitList', habitSchema);
+module.exports = mongoose.model('HabitList', habitListSchema);

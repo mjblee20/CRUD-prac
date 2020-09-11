@@ -11,7 +11,7 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/').post((req, res) => {
-  const task = req.body.task;
+  var task = req.body.task;
 
   const todoItem = new Todo({
     task: task,
@@ -33,7 +33,14 @@ router.route('/').post((req, res) => {
 });
 
 router.route('/update/:id').put((req, res) => {
-  Todo.findByIdAndUpdate(req.params.id, (err) => {
+  var task = req.body.task;
+  var taskId = req.params.id;
+  const updateItem = new Todo({
+    _id: taskId,
+    task: task,
+  });
+
+  Todo.findByIdAndUpdate(taskId, updateItem, (err) => {
     if (!err) {
       res.json({ msg: 'successfully updated' });
     } else {

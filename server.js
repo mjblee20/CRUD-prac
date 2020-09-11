@@ -20,7 +20,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get('/', (req, res) => {
-  res.send('hi');
+  res.send('Welcome To The Habit-Server');
 });
 
 app.listen(process.env.PORT || 5000, () => {

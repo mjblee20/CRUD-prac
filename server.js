@@ -13,7 +13,7 @@ app.use(cors());
 const todoAPI = require('./api/todo-api');
 app.use('/api/todos', todoAPI);
 const habitAPI = require('./api/habit-api');
-app.use('/api/habits');
+app.use('/api/habits', habitAPI);
 
 const connection = process.env.MONGODB_URI;
 mongoose

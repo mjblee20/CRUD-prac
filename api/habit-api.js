@@ -10,6 +10,7 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/').post((req, res) => {
+  console.log(req.body);
   var newHabit = req.body.newHabit;
   var oldHabit = req.body.oldHabit;
 

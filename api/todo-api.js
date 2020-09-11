@@ -4,7 +4,6 @@ const router = express.Router();
 const Todo = require('../model/todo');
 
 router.route('/').get((req, res) => {
-  // res.send('get');
   Todo.find()
     .then((tasks) => res.json(tasks))
     .catch((err) => console.log(err));
